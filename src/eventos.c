@@ -9,26 +9,26 @@ void processarCasa(Jogo *j){
     if(cel == 'C'){
 
         j->cristais++;
-        snprintf(j->mensagem, TAM_MSG, "Cristal coletado!! (%d/%d)", j->cristais, j->minimoCristais);
+        printf("Cristal coletado!\n");
         j->mapa[j->linhaJ][j->colunaJ] = '.';
 
     }else if(cel == 'R'){
 
         j->energia += 5;
-        snprintf(j->mensagem, TAM_MSG, "Energia recuperada! (+5 energia)");
+        printf("Energia recuperada (+5 de energia)!!\n");
         j->mapa[j->linhaJ][j->colunaJ] = '.';
 
     }else if(cel == 'A'){
 
         j->energia -= 3;
-        snprintf(j->mensagem, TAM_MSG, "Haha, caiu em uma armadilha! (-3 energia)");
+        printf("Haha caiu em uma armadilha lerdao! (-3 de energia)\n");
         j->mapa[j->linhaJ][j->colunaJ] = '.';
 
     }else if(cel == 'E'){
 
         j->cristais++;
         j->energia += 2;
-        snprintf(j->mensagem, TAM_MSG, "Evento Aleatorio! (+1 Cristal)(+2 energia)");
+        printf("Evento aleatorio!! +2 de energia!!\n");
         j->mapa[j->linhaJ][j->colunaJ] = '.';
 
     }

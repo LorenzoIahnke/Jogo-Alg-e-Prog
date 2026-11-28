@@ -2,7 +2,7 @@
 #include <string.h>
 #include "raylib.h"
 #include "jogo.h"
-
+#include <locale.h>
 #define TAM_CELULA 30
 #define ALTURA_PAINEL 100
 
@@ -44,6 +44,7 @@ const char* selecionarMapa(){
 
 
 int main(){
+    setlocale(LC_ALL, "Potuguese");
     Jogo jogo;
     int comando, resultado, jogarDenovo;
 
@@ -87,7 +88,7 @@ int main(){
                     if(jogo.cristais >= jogo.minimoCristais){
                         resultado = VITORIA;
                     }else{
-                        snprintf(jogo.mensagem, TAM_MSG, "Cristais insuficientes para sair");
+                        printf("Cristais insuficientes para sair!\n");
                     }
                 }
 
@@ -95,7 +96,7 @@ int main(){
                     resultado = DERROTA;
                 }
             }else{
-                snprintf(jogo.mensagem, TAM_MSG, "Movimento invalido!");
+                printf("Movimento inválido!!\n");
             }
         }
 
